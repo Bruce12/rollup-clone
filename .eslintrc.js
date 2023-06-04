@@ -14,9 +14,9 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
+        "prettier"
     ],
     "rules": {
-        quotes: 2,
-        eqeqeq: 2,
+        'prettier/prettier': 'error',
     }
 }

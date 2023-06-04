@@ -16,7 +16,8 @@
     "build:aio": "rollup -c config/rollup.config.aio.js",
     "build": "npm run build:self && npm run build:esm && npm run build:aio",
     "postinstall": "node postinstall.js",
-    "lint": "eslint src config test"
+    "lint": "eslint src config test",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
