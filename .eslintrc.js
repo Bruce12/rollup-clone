@@ -6,18 +6,20 @@ module.exports = {
         "mocha": true,
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        'prettier',
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
-        "vue"
+        "prettier"
     ],
     "rules": {
-        quotes: 1,
+        quotes: 2,
         eqeqeq: 2,
         'no-prototype-builtins': 0,
+        'prettier/prettier': 'error',
     }
 }
