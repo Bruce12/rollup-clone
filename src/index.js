@@ -7,7 +7,7 @@ function clone(source) {
   }
 
   let target;
-  const a = "1"
+  const a = "2"
   if (t === "object") {
     target = {};
     for (let i in source) {
