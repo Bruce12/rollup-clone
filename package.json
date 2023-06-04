@@ -1,6 +1,6 @@
 {
   "name": "rollup-clone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -17,7 +17,9 @@
     "build": "npm run build:self && npm run build:esm && npm run build:aio",
     "postinstall": "node postinstall.js",
     "lint": "eslint src config test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "commit",
+    "cz": "git-cz"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +31,10 @@
     "@babel/register": "7.0.0",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/cz-commitlint": "^17.5.0",
+    "@commitlint/prompt-cli": "^17.6.5",
     "babel-plugin-istanbul": "5.1.0",
+    "commitizen": "^4.3.0",
     "cross-env": "5.2.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
@@ -46,7 +51,8 @@
     "rollup": "0.57.1",
     "rollup-plugin-babel": "4.0.3",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "3.0.3"
+    "rollup-plugin-node-resolve": "3.0.3",
+    "standard-version": "^9.5.0"
   },
   "sideEffects": false,
   "dependencies": {
@@ -61,5 +67,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   }
 }
