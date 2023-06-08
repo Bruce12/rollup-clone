@@ -17,6 +17,7 @@
     "build": "npm run build:self && npm run build:esm && npm run build:aio",
     "postinstall": "node postinstall.js",
     "lint": "eslint src config test",
+    "lint:prettier": "prettier --check",
     "prepare": "husky install",
     "ci": "commit",
     "cz": "git-cz"
