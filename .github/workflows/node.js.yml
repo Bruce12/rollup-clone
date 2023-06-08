@@ -12,18 +12,18 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - users: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - users: wagoid/commitlint-github-action@v4
+      - uses: wagoid/commitlint-github-action@v4
   lint:
     needs: commitlint
     runs-on: ubuntu-latest
     steps:
-      - users: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Use Node.js 16.x
-        users: actions/steup-node@v2
-        width:
+        uses: actions/steup-node@v2
+        with:
           node-version: '16.x'
           cache: 'npm'
       - run: npm ci
@@ -35,17 +35,17 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
-      steps:
-        - users: actions/checkout@v2
-        - name: User Node.js ${{ matrix.node-version }}
-          users: actions/setup-node@v2
-          with:
-            node-version: ${{ matrix.node-version }}
-            cache: 'npm'
-        - run: npm ci
-        - run: npm run build
-        - run: npm run test
-    
+    steps:
+      - uses: actions/checkout@v2
+      - name: User Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test
+
     
     
     
