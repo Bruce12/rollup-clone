@@ -5,6 +5,8 @@ function clone(source) {
   if (t !== 'object' && t !== 'array') {
     return source;
   }
+  let a = 1;
+  console.log(a);
   let target;
   if (t === 'object') {
     target = {};
