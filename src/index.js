@@ -19,6 +19,7 @@ function clone(source) {
       target[i] = clone(source[i]);
     }
   }
+  console.log(target);
   return target;
 }
 
